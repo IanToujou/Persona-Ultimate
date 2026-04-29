@@ -1,6 +1,6 @@
 package net.toujoustudios.persona.event;
 
-import net.toujoustudios.persona.player.PersonaManager;
+import net.toujoustudios.persona.storage.PersonaStorage;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -15,7 +15,7 @@ public class PlayerQuitListener implements Listener {
 
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event) {
-        PersonaManager.save(event.getPlayer().getUniqueId());
+        PersonaStorage.save(event.getPlayer().getUniqueId());
     }
 
 }

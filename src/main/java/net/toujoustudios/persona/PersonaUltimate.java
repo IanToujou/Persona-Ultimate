@@ -5,7 +5,7 @@ import lombok.experimental.Accessors;
 import net.toujoustudios.persona.event.AsyncChatListener;
 import net.toujoustudios.persona.event.PlayerJoinListener;
 import net.toujoustudios.persona.event.PlayerQuitListener;
-import net.toujoustudios.persona.player.PersonaManager;
+import net.toujoustudios.persona.storage.PersonaStorage;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -65,7 +65,7 @@ public final class PersonaUltimate extends JavaPlugin {
      */
     private void postInitialize() {
         registerEvents();
-        PersonaManager.saveAll();
+        PersonaStorage.saveAll();
     }
 
     /**

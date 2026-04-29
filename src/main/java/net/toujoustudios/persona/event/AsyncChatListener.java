@@ -5,7 +5,7 @@ import io.papermc.paper.event.player.AsyncChatEvent;
 import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.text.Component;
 import net.toujoustudios.persona.player.Persona;
-import net.toujoustudios.persona.player.PersonaManager;
+import net.toujoustudios.persona.storage.PersonaStorage;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -26,7 +26,7 @@ public class AsyncChatListener implements Listener, ChatRenderer {
 
     @Override
     public @NonNull Component render(@NonNull Player source, @NonNull Component sourceDisplayName, @NonNull Component message, @NonNull Audience viewer) {
-        Persona persona = PersonaManager.get(source);
+        Persona persona = PersonaStorage.get(source);
         return persona.displayName().append(Component.text(": ")).append(message);
     }
 
