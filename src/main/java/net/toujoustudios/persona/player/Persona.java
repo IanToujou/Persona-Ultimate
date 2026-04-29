@@ -3,9 +3,9 @@ package net.toujoustudios.persona.player;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
-import org.bukkit.entity.Player;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
 
-import java.util.HashMap;
 import java.util.UUID;
 
 /**
@@ -21,28 +21,20 @@ import java.util.UUID;
 @Accessors(fluent = true)
 public class Persona {
 
-    @Getter
-    private static final HashMap<UUID, Persona> instances = new HashMap<>();
-
     private final UUID uuid;
+    private String firstName;
+    private String lastName;
 
     public Persona(UUID uuid) {
         this.uuid = uuid;
     }
 
-    public static Persona get(Player player) {
-        return get(player.getUniqueId());
+    public void save() {
+
     }
 
-    public static Persona get(UUID uuid) {
-        return instances.computeIfAbsent(uuid, Persona::new);
-    }
-
-    public void save() {}
-
-    public static void saveAll() {
-        if (instances.isEmpty()) return;
-        instances.forEach((uuid, persona) -> persona.save());
+    public Component displayName() {
+        return Component.text(firstName + " " + lastName, TextColor.color(0xFF0077));
     }
 
 }
