@@ -5,6 +5,7 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
+import net.toujoustudios.persona.storage.PlayerStorage;
 
 import java.util.UUID;
 
@@ -27,10 +28,13 @@ public class Persona {
 
     public Persona(UUID uuid) {
         this.uuid = uuid;
+        PlayerStorage.load(this);
+        this.firstName = "John";
+        this.lastName = "Doe";
     }
 
     public void save() {
-
+        PlayerStorage.save(this);
     }
 
     public Component displayName() {
