@@ -65,7 +65,7 @@ public final class PersonaUltimate extends JavaPlugin {
      */
     private void postInitialize() {
         registerEvents();
-        PersonaStorage.saveAll();
+        PersonaStorage.saveAllPlayers();
     }
 
     /**

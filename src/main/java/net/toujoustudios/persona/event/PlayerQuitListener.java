@@ -15,7 +15,7 @@ public class PlayerQuitListener implements Listener {
 
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event) {
-        PersonaStorage.save(event.getPlayer().getUniqueId());
+        PersonaStorage.instance().unload(event.getPlayer().getUniqueId());
     }
 
 }
