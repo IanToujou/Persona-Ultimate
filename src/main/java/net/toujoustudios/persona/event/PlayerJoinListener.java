@@ -1,6 +1,6 @@
 package net.toujoustudios.persona.event;
 
-import net.toujoustudios.persona.player.PersonaManager;
+import net.toujoustudios.persona.storage.PersonaStorage;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -15,7 +15,7 @@ public class PlayerJoinListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        PersonaManager.get(event.getPlayer());
+        PersonaStorage.get(event.getPlayer());
     }
 
 }
