@@ -1,0 +1,5 @@
+name: Persona-Ultimate
+version: '${version}'
+main: net.toujoustudios.persona.PersonaUltimate
+api-version: '1.21.11'
+load: POSTWORLD
